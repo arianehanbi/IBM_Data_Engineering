@@ -1,11 +1,11 @@
 # Prepare the lab environment
-# 1) Download Kafka
+1) Download Kafka
 wget https://archive.apache.org/dist/kafka/2.8.0/kafka_2.12-2.8.0.tgz
 
-# 2) Extract Kafka
+2) Extract Kafka
 tar -xzf kafka_2.12-2.8.0.tgz
 
-# 3) Install python kafka Module
+3) Install python kafka Module
 python3 -m pip install kafka-python
 
 
@@ -34,6 +34,7 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic toll --f
 
 
 
+
 # Produce and consume with message keys
 # Start a new producer with message key enabled
 bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic toll --property parse.key=true --property key.separator=:
@@ -51,3 +52,15 @@ bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092  --topic toll --g
 
 # Shift the offset to left by 2
 bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092  --topic toll --group atm-app --reset-offsets --shift-by -2 --execute
+
+
+
+
+# Download `toll_traffic_generator.py` and `streaming_data_reader.py`
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/toll_traffic_generator.py
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/streaming_data_reader.py
+
+# Run `toll_traffic_generator.py`
+python3 toll_traffic_generator.py
+python3 streaming_data_reader.py
+
