@@ -3,7 +3,9 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from airflow.utils.dates import days_ago
 
-# cd /home/project/airflow/dags/finalassignment/staging
+
+# Build an ETL Pipeline using Airflow
+# Later, save this file as ETL_toll_data.py
 
 # DAG argument
 default_args = {
@@ -29,8 +31,7 @@ dag = DAG(
 # A task to upzip data
 unzip_data = BashOperator(
     task_id='upzip_data',
-    bash_command='tar -xzf /home/project/airflow/dags/finalassignment/tolldata.tgz > \
-                  fileformats.txt',
+    bash_command='tar -xzf /home/project/airflow/dags/finalassignment/tolldata.tgz > fileformats.txt',
     dag=dag,
 )
 
@@ -51,16 +52,14 @@ extract_data_from_tsv = BashOperator(
 # A task to extract data from fixed width file
 extract_data_from_fixed_width = BashOperator(
     task_id='extract_data_from_fixed_width',
-    bash_command='awk "NF{print $(NF-1),$NF}" OFS="," payment-data.txt > \
-                  fixed_width_data.csv',
+    bash_command='awk "NF{print $(NF-1),$NF}" OFS="," payment-data.txt > fixed_width_data.csv',
     dag=dag,
 )
 
 # A task to consolidate data extracted from previous tasks
 consolidate_data = BashOperator(
     task_id='consolidate_data',
-    bash_command='paste -d"," csv_data.csv tsv_data.csv fixed_width_data.csv > \
-                  extracted_data.csv',
+    bash_command='paste -d"," csv_data.csv tsv_data.csv fixed_width_data.csv > extracted_data.csv',
     dag=dag,
 )
 
@@ -72,9 +71,19 @@ transform_data = BashOperator(
 )
 
 # Task pipeline
-unzip_data >> \
-    extract_data_from_csv >> \
-        extract_data_from_tsv >> \
-            extract_data_from_fixed_width >> \
-                consolidate_data >> \
-                    transform_data
+unzip_data >> extract_data_from_csv >> extract_data_from_tsv >> extract_data_from_fixed_width >> consolidate_data >> transform_data
+
+
+# Prepare for the environment and data
+# sudo mkdir -p /home/project/airflow/dags/finalassignment/staging
+# sudo cd /home/project/airflow/dags/finalassignment
+# wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/tolldata.tgz
+# cd staging
+
+# Submit the DAG
+# sudo cp ETL_toll_data.py $AIRFLOW_HOME/dags
+# airflow dags list | grep ETL_toll_data
+# airflow dags list-import-errors
+
+# Unpause the DAG
+# airflow dags unpause ETL_toll_data
