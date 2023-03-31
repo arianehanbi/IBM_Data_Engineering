@@ -15,3 +15,26 @@ In this assignment you will author an Apache Airflow DAG that will:
 3. Extract data from a fixed width file
 4. Transform the data
 5. Load the transformed data into the staging area
+
+
+## PROJECT 8.2 Creating Streaming Data Pipelines using Kafka
+
+#### Senario
+
+You are a data engineer at a data analytics consulting company. You have been assigned to a project that aims to de-congest the national highways by analyzing the road traffic data from different toll plazas. As a vehicle passes a toll plaza, the vehicle’s data like `vehicle_id`, `vehicle_type`, `toll_plaza_id` and timestamp are streamed to Kafka. Your job is to create a data pipe line that collects the streaming data and loads it into a database.
+
+#### Objectives
+
+In this assignment you will create a streaming data pipe by performing these steps:
+
+1. Start a MySQL Database server.
+2. Create a table to hold the toll data.
+3. Start the Kafka server.
+4. Install the Kafka python driver.
+5. Install the MySQL python driver.
+6. Create a topic named toll in kafka.
+7. Download streaming data generator program.
+8. Customize the generator program to steam to toll topic.
+9. Download and customise streaming data consumer.
+10. Customize the consumer program to write into a MySQL database table.
+11. Verify that streamed data is being collected in the database table.
