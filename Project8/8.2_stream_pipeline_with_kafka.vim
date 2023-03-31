@@ -1,5 +1,3 @@
-MTY2ODYtYXJpYW5l
-
 # Prepare the lab environment
 # 1) Download Kafka
 wget https://archive.apache.org/dist/kafka/2.8.0/kafka_2.12-2.8.0.tgz
