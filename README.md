@@ -1,5 +1,8 @@
 # IBM Data Engineering 
 
+<br>
+<br>
+
 ## PROJECT 4 Introduction to Relational Database </sup>
 
 #### Scenario
@@ -38,6 +41,8 @@ After completing this lab, you will be able to:
 > 
 > A Python based Jupyter notebook has been provided to help with completing this assignment. Follow the instructions to complete all the problems. Then share the Queries and Results with your peers for reviewing.
 
+<br>
+<br>
 
 ## PROJECT 6 Hands-on Introduction to Linux commands and Shell Scripting
 
@@ -53,6 +58,8 @@ After completing this lab, you will be able to:
 2. You will schedule your shell script to run every 24 hours using crontab.
 3. TIP: If you're unsure whether some of your code will work as wanted, you can try the command directly in the terminal - and even create your own test scripts!
 
+<br>
+<br>
 
 ## PROJECT 7 Database Administration
 
@@ -67,6 +74,9 @@ After completing this lab, you will be able to:
 **Part 2** You will work with MySQL server and perform the tasks like configuration check, recovery of data. You will use indexing to improve the database performance. You will identify which storage engines are supported by the server and which table uses which storage engine. Optionally you will also automate backup tasks.
 
 **Part 3** You will work with the cloud instance of IBM DB2 server and perform the tasks like restoration of data, index creation to improve the query performance. You will create views to make queries easier to write. Optionally you will also connect to the cloud instance of IBM DB2 server and from command line.
+
+<br>
+<br>
 
 ## PROJECT 8.1 Creating ETL Data Pipelines using Apache Airflow
 
@@ -83,6 +93,8 @@ In this assignment you will author an Apache Airflow DAG that will:
 4. Transform the data
 5. Load the transformed data into the staging area
 
+<br>
+<br>
 
 ## PROJECT 8.2 Creating Streaming Data Pipelines using Kafka
 
@@ -105,3 +117,14 @@ In this assignment you will create a streaming data pipe by performing these ste
 9. Download and customise streaming data consumer.
 10. Customize the consumer program to write into a MySQL database table.
 11. Verify that streamed data is being collected in the database table.
+
+<br>
+<br>
+
+## PROJECT 9 Getting Started with Data Warehousing and BI Analytics
+
+#### Senario
+
+> 
+
+#### Objectives
