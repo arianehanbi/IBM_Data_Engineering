@@ -99,11 +99,66 @@ refresh table avg_customer_bill;
 
 #### Querying the DWH (Cubes, Rollups, Grouping sets, Materialized views)
 
+# Create a groupping set
+select year,category, sum(billedamount) as totalbilledamount
+from factbilling
+left join dimcustomer
+on factbilling.customerid = dimcustomer.customerid
+left join dimmonth
+on factbilling.monthid=dimmonth.monthid
+group by grouping sets(year,category)
+order by year, category
+
+# Create a rollup
+select year,category, sum(billedamount) as totalbilledamount
+from factbilling
+left join dimcustomer
+on factbilling.customerid = dimcustomer.customerid
+left join dimmonth
+on factbilling.monthid=dimmonth.monthid
+group by rollup(year,category)
+order by year, category
+
+# Create a cube
+select year,category, sum(billedamount) as totalbilledamount
+from factbilling
+left join dimcustomer
+on factbilling.customerid = dimcustomer.customerid
+left join dimmonth
+on factbilling.monthid=dimmonth.monthid
+group by cube(year,category)
+order by year, category
 
 
+### Materialized Query Tables.
+# 1. Create the MQT
+CREATE TABLE countrystats (country, year, totalbilledamount) AS
+  (select country, year, sum(billedamount)
+from factbilling
+left join dimcustomer
+on factbilling.customerid = dimcustomer.customerid
+left join dimmonth
+on factbilling.monthid=dimmonth.monthid
+group by country,year)
+     DATA INITIALLY DEFERRED
+     REFRESH DEFERRED
+     MAINTAINED BY SYSTEM;
+     
+# Run the MQT
+select country, year, sum(billedamount)
+from factbilling
+left join dimcustomer
+on factbilling.customerid = dimcustomer.customerid
+left join dimmonth
+on factbilling.monthid=dimmonth.monthid
+group by country,year
 
 
+# 2. Populate/refresh data into the MQT
+refresh table countrystats;
 
+# 3. Query the MQT
+SELECT * FROM countrystats;
 
 
 
