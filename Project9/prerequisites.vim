@@ -42,14 +42,8 @@ bash setup_staging_area.sh
 db2cli writecfg add -database dbname -host hostname -port 50001 -parameter "SecurityTransportMode=SSL"
 db2cli writecfg add -dsn dsn_name -database dbname -host hostname -port 50001
 
-db2cli writecfg add -database BLUDB -host 0c77d6f2-5da9-48a9-81f8-86b520b87518.bs2io90l08kqb1od8lcg.databases.appdomain.cloud -port 31198 -parameter "SecurityTransportMode=SSL"
-db2cli writecfg add -dsn production -database BLUDB -host 0c77d6f2-5da9-48a9-81f8-86b520b87518.bs2io90l08kqb1od8lcg.databases.appdomain.cloud -port 31198
-
-
 #4 Veirfy a db2cli dsn
 db2cli validate -dsn alias -connect -user userid -passwd password
-
-db2cli validate -dsn production -connect -user jrg38634 -passwd SuWySBe5Y4MsYnh9
 
 
 #5 Create the schema on production DWH
@@ -57,7 +51,7 @@ db2cli validate -dsn production -connect -user jrg38634 -passwd SuWySBe5Y4MsYnh9
 wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/star-schema.sql
 
 # Create the schema
-db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql star-schema.sql
+db2cli execsql -dsn production -user userid -passwd password -inputsql star-schema.sql
 
 
 #6 Populate the production DWH
@@ -69,9 +63,9 @@ wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB02
 ls *.sql
 
 # Load the data in the DWH
-db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql DimCustomer.sql
-db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql DimMonth.sql
-db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql FactBilling.sql
+db2cli execsql -dsn production -user userid -passwd password -inputsql DimCustomer.sql
+db2cli execsql -dsn production -user userid -passwd password -inputsql DimMonth.sql
+db2cli execsql -dsn production -user userid -passwd password -inputsql FactBilling.sql
 
 
 #7 Verify the data on the production DWH
@@ -79,11 +73,11 @@ db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql
 wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0260EN-SkillsNetwork/labs/Populating%20a%20Data%20Warehouse/verify.sql
 
 # Verify the data in the DWH
-db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9 -inputsql verify.sql
+db2cli execsql -dsn production -user userid -passwd password -inputsql verify.sql
 
 
 #8 Work with db2cli interactive command line
-db2cli execsql -dsn production -user jrg38634 -passwd SuWySBe5Y4MsYnh9
+db2cli execsql -dsn production -user userid -passwd password
 select count(*) from DimMonth;
 
 
