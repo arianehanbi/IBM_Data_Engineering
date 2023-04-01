@@ -128,3 +128,50 @@ In this assignment you will create a streaming data pipe by performing these ste
 > 
 
 #### Objectives
+
+<br>
+<br>
+
+## PROJECT 10
+
+#### Senario
+
+> 
+
+#### Objectives
+
+<br>
+<br>
+
+## PROJECT 11
+
+#### Senario
+
+> 
+
+#### Objectives
+
+<br>
+<br>
+
+## PROJECT 12
+
+#### Senario
+
+> 
+
+#### Objectives
+
+<br>
+<br>
+
+## PROJECT 13
+
+#### Senario
+
+> 
+
+#### Objectives
+
+<br>
+<br>
