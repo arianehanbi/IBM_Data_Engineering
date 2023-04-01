@@ -25,7 +25,8 @@ After completing this lab, you will be able to:
 9. Import data into a Db2 database.
 10. Import data into a MySQL database.
 
-
+<br>
+<br>
 
 ## PROJECT 5 Database and SQL for Data Science with Python
 
