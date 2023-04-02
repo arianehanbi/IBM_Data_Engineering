@@ -142,6 +142,14 @@ In this assignment you will create a streaming data pipe by performing these ste
 
 #### Objectives
 
+In this assignment you will:
+
+1. Design a Data Warehouse
+2. Load data into Data Warehouse
+3. Write aggregation queries
+4. Create MQTs
+5. Create a Dashboard
+
 <br>
 <br>
 
