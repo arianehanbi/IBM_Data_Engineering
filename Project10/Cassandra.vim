@@ -37,4 +37,4 @@ show version                              // show the server version
 cls                                       // clear the cqlsh screen
 exit                                      // disconnect from the server
 
-describe keyspaces                        // list keyspaces
+describe keyspaces                        // list keyspaces 
