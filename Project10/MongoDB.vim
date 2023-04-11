@@ -81,3 +81,27 @@ db.mycollection.aggregate([
     "$limit":2
 }
 ])
+
+
+
+
+
+
+#### Mongo Client (Accessing MongoDB from Python)
+from pymongo import MongoClient
+from bson.json_util import dumps
+
+uri = "mongodb://USER:PASSWORD@uri/test"
+client = MongoClient(uri)
+campusDB = client.campusManagementDB
+students = campusDB.students
+
+student.insert_one()         # create document
+student.find_one()           # read document
+student.count_documents()
+student.replace_one()        # update document
+student.update_many()
+student.delete_one()         # delete document
+
+cursor = student.find()          # print read documents
+print(dumps(cursor, indent=4))
