@@ -88,6 +88,9 @@ db.mycollection.aggregate([
 
 
 #### Mongo Client (Accessing MongoDB from Python)
+
+python3 -m pip install pymongo
+
 from pymongo import MongoClient
 from bson.json_util import dumps
 
