@@ -66,20 +66,34 @@ USE name_keyspaces;
 
 USE name_keyspaces;
 
-CREATE TABLE table_name(
+
+CREATE TABLE table_name(                 \\ Static Table
   id int PRIMARY KEY,
   name text,
   price decimal,
-  date date
+  date date,
 );
 
-ALTER TABLE table_name
-ADD year int;
+CREATE TABLE table_name(                 \\ Dynamic Table
+  id int,
+  name text,
+  group_name text STATIC,
+  price decimal,
+  date date,
+  
+  PRIMARY KEY ((id), name))
+) WITH CLUSTERING ORDER BY (name ASC);
 
-ALTER TABLE table_name
-DROP price;
 
-DROP TABLE table_name;
+ALTER TABLE table_name ADD year int;
+ALTER TABLE table_name DROP price;
+ALTER TABLE table_name RENAME user_name TO user_name;   \\ renaming support for clustering key, not partition key
+ALTER TABLE table_name WITH default_time_to_live=10;    \\ change table properties
+
+
+DROP TABLE table_name;                  \\ remote all data and schema
+TRUNCATE TABLE table_name;              \\ remove all data from a table, but not from table schema definition
+TRUNCATE table_name;
 
 
 DESCRIBE TABLES;
@@ -90,18 +104,21 @@ DESCRIBE table_name;
 
 #### CRUD Operations
 
+\\ By default no reads before write: INSERT and UPDATE operations behave similary
+\\ Always start your query using the "partition key"
+
 INSERT INTO table_name(id, name, year)
-VALUES (1, 'Toy Story', 1995);
+VALUES (1, 'Toy Story', 1995)
+USING TTL 10;                          \\ in 10s from insertion, the data will not be available for query
 
-UPDATE table_name
-SET year = 1996
-WHERE id = 4;
-
-DELETE FROM table_name
-WHERE id = 5;
+UPDATE table_name SET year = 1996 WHERE id = 4;
 
 
-SELECT * FROM table_name;
+DELETE colname FROM table_name WHERE id = 5;
+DELETE FROM table_name WHERE id = 5;
+
+
+SELECT * FROM table_name WHERE partition_key = x;
 SELECT * FROM table_name WHERE id = 1;
 
 
