@@ -29,7 +29,8 @@ Examples)
 
 
 
-#### Connect to Cassandra server
+#### Getting the environment ready
+
 start_cassandra                           // start the Cassandra server
 cqlsh --username cassandra --password pw  // coneect to the server
 show host                                 // show the host details 
@@ -37,4 +38,31 @@ show version                              // show the server version
 cls                                       // clear the cqlsh screen
 exit                                      // disconnect from the server
 
-describe keyspaces                        // list keyspaces 
+describe keyspaces;                       // list keyspaces 
+use keyspaces;
+
+
+
+#### Create a keyspace
+
+CREATE KEYSPACE training;
+WITH REPLICATION = {'class':'Replication_Strategy', 'replication_factor' : 3};
+
+ALTER KEYSPACE training;
+WITH REPLICATION = {'class': 'NetworkTopologyStrategy'};
+
+DROP KEYSPACE training;
+
+DESCRIBE KEYSPACES;
+DESCRIBE name_keyspaces;
+
+USE name_keyspaces;
+
+
+
+
+
+
+
+
+
