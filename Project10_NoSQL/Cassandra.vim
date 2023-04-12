@@ -43,7 +43,7 @@ use keyspaces;
 
 
 
-#### Create a keyspace
+#### KEYSPACE Operations
 
 CREATE KEYSPACE training;
 WITH REPLICATION = {'class':'Replication_Strategy', 'replication_factor' : 3};
@@ -62,7 +62,7 @@ USE name_keyspaces;
 
 
 
-#### Create a table
+#### TABLE Operations
 
 USE name_keyspaces;
 
