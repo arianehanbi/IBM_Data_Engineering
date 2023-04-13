@@ -108,3 +108,17 @@ student.delete_one()         # delete document
 
 cursor = student.find()          # print read documents
 print(dumps(cursor, indent=4))
+
+
+
+
+#### import/export data from MongoDB
+
+mongoimport -u root -p pw --authenticationDatabase admin --db training --collection diamonds 
+            --file diamonds.json
+            
+mongoexport -u root -p pw --authenticationDatabase admin --db training --collection diamonds 
+            --out mongodb_exported_data.json
+mongoexport -u root -p pw --authenticationDatabase admin --db training --collection diamonds 
+            --out mongodb_exported_data.csv --type=csv --fields _id,clarity,cut,price
+
