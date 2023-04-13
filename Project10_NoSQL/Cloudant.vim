@@ -137,5 +137,65 @@ curl -X POST $URL/db_name/_find  \
 
 
 
+#### Get the environment ready
+
+export CLOUDANTURL=“your_url”
+curl $CLOUDANTURL                     # test if you can reach your cloudant server
+curl $CLOUDANTURL/_all_dbs            # test your credentials
 
 
+curl -X PUT $CLOUDANTURL/animals      # create a db
+curl -X DELETE $CLOUDANTURL/animals   # delete a db
+curl $CLOUDANTURL/_all_dbs            # list all dbs
+
+
+
+# insert a document
+
+curl -X PUT $CLOUDANTURL/planets/"1"                         
+     -d '{ "name" : "Mercury" , "position_from_sum" :1 }'
+      
+curl -X GET $CLOUDANTURL/planets/1    # list the document with _id=1
+
+
+
+# update a document
+
+curl -X PUT $CLOUDANTURL/planets/1 -d '{ 
+    "name" : "Mercury" ,
+    "position_from_sum" :1,
+    "revolution_time":"88 days",
+    "_rev":"1-123456"
+    }'
+
+
+
+
+# delete a document
+curl -X DELETE $CLOUDANTURL/planets/1?rev=1-123456
+
+
+
+# query your db
+
+curl -X POST $CLOUDANTURL/diamonds/_find \
+      -H"Content-Type: application/json" \
+      -d'{ 
+          "selector":
+              {
+                  "_id":"1"
+              }
+          }'
+          
+          
+
+
+# create an index
+
+curl -X POST $CLOUDANTURL/diamonds/_index \
+      -H"Content-Type: application/json" \
+      -d'{
+          "index": {
+              "fields": ["price"]
+          }
+      }'
