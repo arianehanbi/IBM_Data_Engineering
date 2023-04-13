@@ -142,3 +142,12 @@ COPY diamonds TO 'cassandra-diamonds.csv';        \\ exoprt diamods table into a
 
 
 
+COPY entertainment.movies(id,title,year,rating,director) FROM 'partial_data.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+
+SELECT COUNT(*) FROM movies;
+
+CREATE INDEX rating_index ON movies(rating);
+
+SELECT COUNT(*) FROM movies WHERE rating='G';
+
+
