@@ -114,6 +114,10 @@ print(dumps(cursor, indent=4))
 
 #### import/export data from MongoDB
 
+wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu1804-x86_64-100.3.1.tgz
+tar -xf mongodb-database-tools-ubuntu1804-x86_64-100.3.1.tgz
+export PATH=$PATH:/home/project/mongodb-database-tools-ubuntu1804-x86_64-100.3.1/bin
+
 mongoimport -u root -p pw --authenticationDatabase admin --db training --collection diamonds 
             --file diamonds.json
             
