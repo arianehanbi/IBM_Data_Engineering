@@ -45,10 +45,10 @@ use keyspaces;
 
 #### KEYSPACE Operations
 
-CREATE KEYSPACE training;
-WITH REPLICATION = {'class':'Replication_Strategy', 'replication_factor' : 3};
+CREATE KEYSPACE training
+WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
 
-ALTER KEYSPACE training;
+ALTER KEYSPACE training
 WITH REPLICATION = {'class': 'NetworkTopologyStrategy'};
 
 DROP KEYSPACE training;
@@ -138,16 +138,5 @@ WITH DELIMITER=',' AND HEADER=TRUE;
 
 COPY diamonds TO 'cassandra-diamonds.csv';        \\ exoprt diamods table into a csv file
 
-
-
-
-
-COPY entertainment.movies(id,title,year,rating,director) FROM 'partial_data.csv' WITH DELIMITER=',' AND HEADER=TRUE;
-
-SELECT COUNT(*) FROM movies;
-
-CREATE INDEX rating_index ON movies(rating);
-
-SELECT COUNT(*) FROM movies WHERE rating='G';
 
 
