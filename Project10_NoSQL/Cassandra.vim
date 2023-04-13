@@ -124,3 +124,21 @@ SELECT * FROM table_name WHERE id = 1;
 
 
 
+#### Create Index
+
+CREATE INDEX price_index ON diamonds(price);
+
+
+
+
+#### import/export data from Cassandra
+
+COPY training.diamonds(id,clarity,cut,price) FROM 'mongodb_exported_data.csv' 
+WITH DELIMITER=',' AND HEADER=TRUE;
+
+COPY diamonds TO 'cassandra-diamonds.csv';        \\ exoprt diamods table into a csv file
+
+
+
+
+
