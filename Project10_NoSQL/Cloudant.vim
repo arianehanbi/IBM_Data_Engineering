@@ -1,6 +1,14 @@
 #### Cloudant query
 # JSON document type
 
+# fetch all documents
+{
+  "selector": {}
+}
+
+
+
+# query  
 {
    "selector": {
       "_id": {
