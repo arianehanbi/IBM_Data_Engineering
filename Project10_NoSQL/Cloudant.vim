@@ -5,8 +5,7 @@
 {
   "selector": {}
 }
-
-
+        
 
 # query  
 {
@@ -186,6 +185,8 @@ curl -X POST $CLOUDANTURL/diamonds/_find \
           }'
           
           
+          
+          
 # create an index
 
 curl -X POST $CLOUDANTURL/diamonds/_index \
@@ -195,8 +196,6 @@ curl -X POST $CLOUDANTURL/diamonds/_index \
               "fields": ["price"]
           }
       }'
-      
- 
  
  
  
