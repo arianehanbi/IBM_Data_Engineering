@@ -170,10 +170,8 @@ curl -X PUT $CLOUDANTURL/planets/1 -d '{
 
 
 
-
 # delete a document
 curl -X DELETE $CLOUDANTURL/planets/1?rev=1-123456
-
 
 
 # query your db
@@ -188,8 +186,6 @@ curl -X POST $CLOUDANTURL/diamonds/_find \
           }'
           
           
-
-
 # create an index
 
 curl -X POST $CLOUDANTURL/diamonds/_index \
@@ -199,3 +195,23 @@ curl -X POST $CLOUDANTURL/diamonds/_index \
               "fields": ["price"]
           }
       }'
+      
+ 
+ 
+ 
+ 
+ 
+#### import/export from Cloudant DB
+# Neeed couchimport, couchexport
+
+npm install -g couchimport@1.4.0
+couchimport --version
+mongoimport --version
+
+
+couchexport --url $CLOUDANTURL --db diamonds --delimiter ","   # export data from db into csv format
+couchexport --url $CLOUDANTURL --db diamonds --delimiter "," > diamonds.csv
+
+couchexport --url $CLOUDANTURL --db diamonds --type jsonl      # export data from db into json format
+couchexport --url $CLOUDANTURL --db diamonds --type jsonl > diamonds.json
+
