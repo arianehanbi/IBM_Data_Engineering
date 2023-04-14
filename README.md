@@ -157,23 +157,24 @@ In this assignment you will:
 
 #### Senario
 
-> 
+> You are a data engineer at a data analytics consulting company. Your company prides itself in being able to efficiently handle data in any format on any database on any platform. Analysts in your office need to work with data on different databases, and data in different formats. While they are good at analyzing data, they count on you to be able to move data from external sources into various databases, move data from one type of database to another, and be able to run basic queries on various databases.
 
 #### Objectives
 
+In this assignment you will:
+
+1. replicate a Cloudant database.
+2. create indexes on a Cloudant database.
+3. query data in a Cloudant database.
+4. import data into a MongoDB database.
+5. query data in a MongoDB database.
+6. export data from MongoDB.
+7. import data into a Cassandra database.
+8. query data in a Cassandra database.
+
 <br>
 <br>
 
-## PROJECT 11
-
-#### Senario
-
-> 
-
-#### Objectives
-
-<br>
-<br>
 
 ## PROJECT 12
 
