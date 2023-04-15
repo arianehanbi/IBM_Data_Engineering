@@ -13,8 +13,6 @@ CREATE TABLE DimDate
 	PRIMARY KEY (dateid)
 );
 
-
-
 CREATE TABLE DimCategory
 (
 	categoryid integer NOT NULL,
@@ -22,14 +20,12 @@ CREATE TABLE DimCategory
 	PRIMARY KEY (categoryid)
 );
 
-
 CREATE TABLE DimCountry
 (
 	countryid integer NOT NULL,
 	country varchar(50) NOT NULL,
 	PRIMARY KEY (countryid)
 );
-
 
 CREATE TABLE FactSales
 (
@@ -41,23 +37,22 @@ CREATE TABLE FactSales
 	PRIMARY KEY (orderid)
 );
 
-
 ALTER TABLE FactSales
 FOREIGN KEY (categoryid)
 	REFERENCES DIMCATEGORY(categoryid)
 		ON UPDATE NO ACTION
 		ON DELETE CASCADE;
 		
-    
 ALTER TABLE FactSales
 FOREIGN KEY (countryid)
 	REFERENCES DIMCOUNTRY(countryid)
 		ON UPDATE NO ACTION
-		ON DELETE CASCADE;
-		
+		ON DELETE CASCADE;		
     
 ALTER TABLE FactSales
 FOREIGN KEY (dateid)
 	REFERENCES DIMDATE(dateid)
 		ON UPDATE NO ACTION
 		ON DELETE CASCADE;
+
+
