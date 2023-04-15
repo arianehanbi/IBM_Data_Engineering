@@ -202,23 +202,16 @@ After completing this lab, you will be able to:
 
 ##### OLTP
 
-> You are a data engineer at an e-commerce company. 
-> Your company needs you to design a data platform that uses MySQL as an OLTP database. 
-> You will be using MySQL to store the OLTP data.
-
+> You are a data engineer at an e-commerce company. Your company needs you to design a data platform that uses MySQL as an OLTP database. You will be using MySQL to store the OLTP data.
 
 ##### NoSQL
 
-> You are a data engineer at an e-commerce company. 
-> Your company needs you to design a data platform that uses MongoDB as a NoSQL database. 
-> You will be using MongoDB to store the e-commerce catalog data.
+> You are a data engineer at an e-commerce company. Your company needs you to design a data platform that uses MongoDB as a NoSQL database. You will be using MongoDB to store the e-commerce catalog data.
 
 ##### Data Warehouse
 
-> You are a data engineer hired by an ecommerce company named SoftCart.com. 
-> The company retails download only items like E-Books, Movies, Songs etc. 
-> The company has international presence and customers from all over the world. 
-> The company would like to create a data warehouse so that it can create reports like
+> You are a data engineer hired by an ecommerce company named SoftCart.com. The company retails download only items like E-Books, Movies, Songs etc. The company has international presence and customers from all over the world. The company would like to create a data warehouse so that it can create reports like
+
 > You have designed the schema for the data warehouse in the previous assignment. Data engineering is a team game. Your senior data engineer reviewed your design. Your schema design was improvised to suit the production needs of the company. In this assignment you will generate reports out of the data in the data warehouse.
 
 ##### Dashboard Creation
@@ -227,13 +220,11 @@ After completing this lab, you will be able to:
 
 ##### ETL
 
-
+> You are a data engineer at an e-commerce company. You need to keep data synchronized between different databases/data warehouses as a part of your daily routine. One task that is routinely performed is the sync up of staging data warehouse and production data warehouse. Automating this sync up will save you a lot of time and standardize your process. You will be given a set of python scripts to start with. You will use/modify them to perform the incremental data load from MySQL server which acts as a staging warehouse to the IBM DB2 which is a production data warehouse. This script will be scheduled by the data engineers to sync up the data between the staging and production data warehouse.
 
 ##### Pipeline
 
-
-##### Big Data
-
+> Write a pipeline that analyzes the web server log file, extracts the required lines(ending with html) and fields(time stamp, size ) and transforms (bytes to mb) and load (append to an existing file.)
 
 #### Objectives
 
@@ -257,6 +248,20 @@ After completing this lab, you will be able to:
 < Dashboard: Cognos >
 1. IBM Cognos Analytics (You can either use IBM Cognos Analytics or Cognose Dashboard Embedded and Watson Studio)
 2. Cloud instance of IBM DB2 database
+
+< ETL >
+1. Connect to IBM DB2 data warehouse and identify the last row on it.
+2. Connect to MySQL staging data warehouse and find all rows later than the last row on the datawarehouse.
+3. Insert the new data in the MySQL staging data warehouse into the IBM DB2 production data warehouse.
+4. Extract data from a web server log file
+5. Transform the data
+6. Load the transformed data into a tar file
+
+< Pipeline >
+
+1. Extract data from a web server log file
+2. Transform the data
+3. Load the transformed data into a tar file
 
 <br>
 <br>
