@@ -215,11 +215,15 @@ After completing this lab, you will be able to:
 
 ##### Data Warehouse
 
-
+> You are a data engineer hired by an ecommerce company named SoftCart.com. 
+> The company retails download only items like E-Books, Movies, Songs etc. 
+> The company has international presence and customers from all over the world. 
+> The company would like to create a data warehouse so that it can create reports like
+> You have designed the schema for the data warehouse in the previous assignment. Data engineering is a team game. Your senior data engineer reviewed your design. Your schema design was improvised to suit the production needs of the company. In this assignment you will generate reports out of the data in the data warehouse.
 
 ##### Dashboard Creation
 
-
+> You are a data engineer at an e-commerce company. Your company has finished setting up a datawarehouse. Now you are assigned the responsibility to design a reporting dashboard that reflects the key metrics of the business.
 
 ##### ETL
 
@@ -232,6 +236,27 @@ After completing this lab, you will be able to:
 
 
 #### Objectives
+
+< OLTP >
+1. design the schema for OLTP database.
+2. load data into OLTP database.
+3. automate admin tasks.
+
+< NoSQL >
+1. import data into a MongoDB database.
+2. query data in a MongoDB database.
+3. export data from MongoDB.
+
+< DWH >
+1. ERD Design Tool of pgAdmin
+2. PostgreSQL Database Server
+3. Load data into Data Warehouse
+4. Write aggregation queries
+5. Create MQTs
+
+< Dashboard: Cognos >
+1. IBM Cognos Analytics (You can either use IBM Cognos Analytics or Cognose Dashboard Embedded and Watson Studio)
+2. Cloud instance of IBM DB2 database
 
 <br>
 <br>
