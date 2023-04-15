@@ -24,6 +24,9 @@ db.mycollection.insert({"color":"white","example":"milk"})  # inserts data into 
 
 # 2. Read: find, findOne, findMany
 db.mycollection.count()                  # count the number of documents in the collection
+db.mycollection.count({field: {$gt: 10000}})
+db.mycollection.count({"screen size": 6.5, "type": "smart phone"})
+
 db.mycollection.find()                   # list all documents in the collection
 db.mycollection.find().limit(3)
 db.mycollection.find({“name”:”py”})
@@ -68,20 +71,14 @@ db.mycollection.aggregate([ {“$sort”:{“field”:-1}} ])
 db.mycollection.aggregate([ {“$sort”:{“field”:-1}},  {“$limit”:2} ])
 db.mycollection.aggregate([ {“$group”: {“_id”: “$field1”,  “average”: {“$avg”: “$field2”} } } ])
 db.mycollection.aggregate([
-{
-    "$group":{
-        "_id":"$subject",
-        "average":{"$avg":"$marks"}
-        }
-},
-{
-    "$sort":{"average":-1}
-},
-{
-    "$limit":2
-}
+    {"$group": {"_id": "$subject", "average": {"$avg": "$marks"}}},
+    {"$sort": {"average": -1}},
+    {"$limit": 2}
 ])
-
+db.electronics.aggregate([
+  {$match: {type: "smart phone"}},
+  {$group: {_id: "type", avg_screen_size: {$avg: "$screen size"}}} 
+])
 
 
 
