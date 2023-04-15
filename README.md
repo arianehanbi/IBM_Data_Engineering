@@ -180,9 +180,18 @@ In this assignment you will:
 
 #### Senario
 
-> 
+> In this scenario, you will import data from an external dataset and create a DataFrame. You'll save the data to a Parquet file and follow the steps to train the module using with Apache Spark. You'll complete the project by deploying the model to the IBM Watson Machine Learning (WML) Service. IBM WML is a scalable, scale-to-zero cloud service that supports training and serving of machine learning and deep learning models, providing a HTTP(S) endpoint for seamless consumption from third-party applications.  Detailed instructions provide guidance throughout the project.
 
 #### Objectives
+
+After completing this lab, you will be able to:
+
+1. Pull-in data from the HMP dataset
+2. Create a Spark data frame from the raw data
+3. Store this to parquet (in Cloud Object Store)
+4. Read it again (from Cloud Object Store)
+5. Deploy this model to Train a ML-Model on that data set
+6. Watson Machine Learning
 
 <br>
 <br>
