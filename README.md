@@ -200,18 +200,36 @@ After completing this lab, you will be able to:
 
 #### Senario
 
-# OLTP
+##### OLTP
 
 > You are a data engineer at an e-commerce company. 
 > Your company needs you to design a data platform that uses MySQL as an OLTP database. 
 > You will be using MySQL to store the OLTP data.
 
 
-# NoSQL
+##### NoSQL
 
 > You are a data engineer at an e-commerce company. 
 > Your company needs you to design a data platform that uses MongoDB as a NoSQL database. 
 > You will be using MongoDB to store the e-commerce catalog data.
+
+##### Data Warehouse
+
+
+
+##### Dashboard Creation
+
+
+
+##### ETL
+
+
+
+##### Pipeline
+
+
+##### Big Data
+
 
 #### Objectives
 
